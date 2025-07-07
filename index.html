@@ -50,15 +50,15 @@
         const timestamp = new Date().getTime();
 
         const iframe = document.getElementById("contentFrame");
-        iframe.src = "https://rokvaz.github.io/littlelink_LAN/en.html?t=" + timestamp;
+        iframe.src = "https://fsa-infosa.github.io/littlelink_LAN/en.html?t=" + timestamp;
 
         document.getElementById("toggleButton").addEventListener("click", function() {
             if (currentPage === "EN") {
-                iframe.src = "https://rokvaz.github.io/littlelink_LAN/lt.html?t=" + timestamp;
+                iframe.src = "https://fsa-infosa.github.io/littlelink_LAN/lt.html?t=" + timestamp;
                 currentPage = "LT";
                 this.textContent = "EN";
             } else {
-                iframe.src = "https://rokvaz.github.io/littlelink_LAN/en.html?t=" + timestamp;
+                iframe.src = "https://fsa-infosa.github.io/littlelink_LAN/en.html?t=" + timestamp;
                 currentPage = "EN";
                 this.textContent = "LT";
             }
