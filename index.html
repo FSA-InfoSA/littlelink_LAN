@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://rokvaz.github.io/littlelink_AN/images/musu/an.png">
+    <meta name="author" content="infoshow">
+    <title>Anime Nights</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button:hover {
+            background-color: #01F6FF;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggleButton">LT</button>
+    <iframe id="contentFrame"></iframe>
+    <script>
+        let currentPage = "EN";
+
+        // resetinan cache on each load because why not
+        const timestamp = new Date().getTime();
+
+        const iframe = document.getElementById("contentFrame");
+        iframe.src = "https://rokvaz.github.io/littlelink_LAN/en.html?t=" + timestamp;
+
+        document.getElementById("toggleButton").addEventListener("click", function() {
+            if (currentPage === "EN") {
+                iframe.src = "https://rokvaz.github.io/littlelink_LAN/lt.html?t=" + timestamp;
+                currentPage = "LT";
+                this.textContent = "EN";
+            } else {
+                iframe.src = "https://rokvaz.github.io/littlelink_LAN/en.html?t=" + timestamp;
+                currentPage = "EN";
+                this.textContent = "LT";
+            }
+        });
+    </script>
+
+</body>
+</html>
